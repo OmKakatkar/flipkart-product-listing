@@ -1,1 +1,12 @@
 /* TODO: Add constants for colors, padding, margin, fixed sizes of layout */
+:root {
+	--clr-primary: #2874f0;
+	--clr-white: #fff;
+	--clr-yellow: #ffe500;
+	--height-header: 3rem;
+}
+
+/* Utilities */
+.inline-flex {
+	display: inline-flex;
+}

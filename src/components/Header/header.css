@@ -1,0 +1,77 @@
+.header {
+	display: flex;
+	background-color: var(--clr-primary);
+	height: var(--height-header);
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	padding: 1rem;
+}
+
+/* Logo */
+.logo {
+	flex-direction: column;
+}
+
+.logo-image {
+	height: 1.5rem;
+}
+
+.logo-text {
+	font-size: 0.8rem;
+	color: var(--clr-white);
+}
+
+.logo-text span {
+	color: var(--clr-yellow);
+}
+
+.logo-icon {
+	height: 0.5rem;
+}
+
+/* Search */
+.search {
+	width: 30vw;
+	min-height: 2rem;
+	margin-left: 1rem;
+	position: relative;
+}
+
+.search input {
+	flex-grow: 1;
+	padding: 0 0.5rem;
+}
+
+.search .search-icon {
+	color: var(--clr-primary);
+	background-color: var(--clr-white);
+	align-self: center;
+	position: absolute;
+	right: 10px;
+}
+
+/* Navigation */
+.navigation {
+	min-width: 20vw;
+	margin-left: 5rem;
+	justify-content: space-evenly;
+	align-items: center;
+	color: var(--clr-white);
+}
+
+.navigation button {
+	padding: 0.3rem 1.5rem;
+	color: var(--clr-primary);
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.more-icon {
+	margin-left: 0.3rem;
+	font-size: 0.7rem;
+}
+
+.cart-icon {
+	margin-right: 0.3rem;
+}
