@@ -11,8 +11,11 @@
 }
 
 .card-image img {
-	object-fit: cover;
+	object-fit: contain;
 	display: block;
+	max-width: 200px;
+	min-height: 250px;
+	max-height: 250px;
 }
 
 .card-icon {

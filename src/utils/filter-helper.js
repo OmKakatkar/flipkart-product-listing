@@ -9,6 +9,9 @@ export function getFilteredProducts(products, filters) {
 	if (filters.idealFor !== "") {
 		filteredProducts = filterByIdealFor(filteredProducts, filters.idealFor);
 	}
+	if (filters.brands !== "") {
+		filteredProducts = filteredByBrand(filteredProducts, filters.brands);
+	}
 	return filteredProducts;
 }
 
@@ -58,4 +61,8 @@ function filterByIdealFor(products, gender) {
 		default:
 			return products;
 	}
+}
+
+function filteredByBrand(products, brand) {
+	return products.filter((product) => product.brand === brand);
 }

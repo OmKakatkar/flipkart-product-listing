@@ -10,9 +10,9 @@ export function Filters({ setProducts, products }) {
 		idealFor: "",
 	};
 	const [filters, setFilters] = useState(initialFilters);
+	const brands = Array.from(new Set(products.map(({ brand }) => brand)));
 
 	useEffect(() => {
-		console.log(getFilteredProducts(products, filters));
 		setProducts(getFilteredProducts(products, filters));
 	}, [setProducts, products, filters]);
 
@@ -105,10 +105,20 @@ export function Filters({ setProducts, products }) {
 			<div className="filter-container">
 				<h3>Brand</h3>
 				<div className="filter-options">
-					<label htmlFor="brand">
-						<input type="radio" name="brand" />
-						Brands
-					</label>
+					{brands.map((brand) => (
+						<label htmlFor={brand} key={brand}>
+							<input
+								type="radio"
+								name="brand"
+								id={brand}
+								onChange={() =>
+									setFilters((prev) => ({ ...prev, brands: brand }))
+								}
+								checked={filters && filters.brands === brand}
+							/>
+							{brand}
+						</label>
+					))}
 				</div>
 			</div>
 

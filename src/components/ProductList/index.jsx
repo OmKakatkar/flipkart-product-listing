@@ -2,7 +2,6 @@ import { Card } from "../Card";
 import "./productList.css";
 
 export function ProductList({ products }) {
-	console.log(products);
 	return (
 		<div className="product-list">
 			{products.length > 0
