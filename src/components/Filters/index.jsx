@@ -115,12 +115,28 @@ export function Filters({ setProducts, products }) {
 			<div className="filter-container">
 				<h3>Ideal For</h3>
 				<div className="filter-options">
-					<label htmlFor="idealFor">
-						<input type="radio" name="idealFor" />
+					<label htmlFor="Men">
+						<input
+							type="radio"
+							name="idealFor"
+							id="Men"
+							onChange={() =>
+								setFilters((prev) => ({ ...prev, idealFor: "Men" }))
+							}
+							checked={filters && filters.idealFor === "Men"}
+						/>
 						Men
 					</label>
-					<label htmlFor="idealFor">
-						<input type="radio" name="idealFor" />
+					<label htmlFor="Women">
+						<input
+							type="radio"
+							name="idealFor"
+							id="Women"
+							onChange={() =>
+								setFilters((prev) => ({ ...prev, idealFor: "Women" }))
+							}
+							checked={filters && filters.idealFor === "Women"}
+						/>
 						Women
 					</label>
 				</div>

@@ -6,6 +6,9 @@ export function getFilteredProducts(products, filters) {
 	if (filters.size !== "") {
 		filteredProducts = sortBySize(filteredProducts, filters.size);
 	}
+	if (filters.idealFor !== "") {
+		filteredProducts = filterByIdealFor(filteredProducts, filters.idealFor);
+	}
 	return filteredProducts;
 }
 
@@ -41,6 +44,17 @@ function sortBySize(products, size) {
 				(product) => product.size && product.size.includes("XL")
 			);
 
+		default:
+			return products;
+	}
+}
+
+function filterByIdealFor(products, gender) {
+	switch (gender) {
+		case "Men":
+			return products.filter((product) => product.gender === "Men");
+		case "Women":
+			return products.filter((product) => product.gender === "Women");
 		default:
 			return products;
 	}
