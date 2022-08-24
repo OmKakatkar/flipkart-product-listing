@@ -1,0 +1,63 @@
+.card {
+	max-width: 250px;
+	min-width: 250px;
+	overflow: hidden;
+	position: relative;
+}
+
+.card-image {
+	max-height: 300px;
+	overflow: hidden;
+}
+
+.card-image img {
+	object-fit: cover;
+	display: block;
+}
+
+.card-icon {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	color: var(--clr-overlay);
+	font-size: 2rem;
+}
+
+.card-icon:hover {
+	color: var(--clr-red);
+}
+
+.card-brand {
+	color: var(--clr-grey);
+	padding: 0 0.5rem;
+}
+
+.card-name {
+	padding: 0 0.5rem;
+	overflow: hidden;
+}
+
+.card-name span {
+	max-width: 60%;
+}
+
+.card-name img {
+	display: block;
+	margin-left: 1rem;
+	width: 40%;
+	max-height: 1rem;
+}
+
+.card-price {
+	padding: 0 0.5rem;
+}
+
+.original-price {
+	text-decoration: line-through;
+	color: var(--clr-grey);
+	margin: 0 0.5rem;
+}
+
+.discount {
+	color: var(--clr-green);
+}
