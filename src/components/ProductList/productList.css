@@ -1,0 +1,7 @@
+.product-list {
+	margin-left: var(--width-sidebar);
+	max-width: var(100vw - var(--width-sidebar));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}

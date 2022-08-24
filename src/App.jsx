@@ -1,12 +1,16 @@
+import { useState } from "react";
+import { Filters, Header, ProductList } from "./components";
+import data from "./database.json";
 import "./App.css";
-import { Card, Filters, Header } from "./components";
 
 function App() {
+	const [filteredProducts, setFilteredProducts] = useState(data.products);
+
 	return (
 		<div className="app">
-			{/* TODO: Add header, filter sidebar, products */}
 			<Header />
-			<Filters />
+			<ProductList products={filteredProducts} />
+			<Filters setProducts={setFilteredProducts} products={data.products} />
 		</div>
 	);
 }

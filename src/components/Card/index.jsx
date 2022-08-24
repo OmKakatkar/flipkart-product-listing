@@ -2,29 +2,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./card.css";
 
-export function Card() {
+export function Card({ product }) {
 	return (
 		<div className="card">
 			<div className="card-image">
-				<img
-					src="https://rukminim1.flixcart.com/image/495/594/l05lx8w0/jean/o/m/x/32-mss22mjn029-metronaut-original-imagcy8ddggwhutf.jpeg?q=50"
-					alt="Full name"
-				/>
+				<img src={product.image} alt={product.name} />
 			</div>
 			<FontAwesomeIcon icon={faHeart} className="card-icon"></FontAwesomeIcon>
-			<div className="card-brand">Brand Name</div>
+			<div className="card-brand">{product.brand}</div>
 			<div className="inline-flex card-name">
-				<span>Full name</span>
+				<span>{product.name}</span>
 				<img
 					src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
 					alt="Flipkart Assured"
 				/>
 			</div>
 			<div className="card-price">
-				<span>₹500</span>
-				<span className="original-price">₹1,999</span>
-				<span className="discount">72% off</span>
+				<span>
+					₹
+					{Math.round(product.price - (product.price * product.discount) / 100)}
+				</span>
+				<span className="original-price">₹{product.price}</span>
+				<span className="discount">{product.discount}% off</span>
 			</div>
+			{product.size && <div>Size : {product.size.join(", ")}</div>}
 		</div>
 	);
 }

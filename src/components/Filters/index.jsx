@@ -1,19 +1,56 @@
+import { useEffect, useState } from "react";
+import { getFilteredProducts } from "../../utils/filter-helper";
 import "./filters.css";
 
-export function Filters() {
+export function Filters({ setProducts, products }) {
+	const initialFilters = {
+		sortBy: "",
+		size: "",
+		brands: "",
+		idealFor: "",
+	};
+	const [filters, setFilters] = useState(initialFilters);
+
+	useEffect(() => {
+		console.log(getFilteredProducts(products, filters));
+		setProducts(getFilteredProducts(products, filters));
+	}, [setProducts, products, filters]);
+
 	return (
 		<aside className="filters">
 			<h2>Filters</h2>
-			<button>Clear Filters</button>
+			<button
+				onClick={() => {
+					setFilters(initialFilters);
+				}}
+			>
+				Clear Filters
+			</button>
 			<div className="filter-container">
 				<h3>Sort By</h3>
 				<div className="filter-options">
-					<label htmlFor="sortBy">
-						<input type="radio" name="sortBy" />
+					<label htmlFor="H2L">
+						<input
+							type="radio"
+							name="sortBy"
+							id="H2L"
+							onChange={() =>
+								setFilters((prev) => ({ ...prev, sortBy: "High to Low" }))
+							}
+							checked={filters && filters.sortBy === "High to Low"}
+						/>
 						High to Low
 					</label>
-					<label htmlFor="sortBy">
-						<input type="radio" name="sortBy" />
+					<label htmlFor="L2H">
+						<input
+							type="radio"
+							name="sortBy"
+							id="L2H"
+							onChange={() =>
+								setFilters((prev) => ({ ...prev, sortBy: "Low to High" }))
+							}
+							checked={filters && filters.sortBy === "Low to High"}
+						/>
 						Low to High
 					</label>
 				</div>
@@ -22,17 +59,44 @@ export function Filters() {
 			<div className="filter-container">
 				<h3>Size</h3>
 				<div className="filter-options">
-					<label htmlFor="size">
-						<input type="radio" name="size" />S
+					<label htmlFor="S">
+						<input
+							type="radio"
+							name="size"
+							id="S"
+							onChange={() => setFilters((prev) => ({ ...prev, size: "S" }))}
+							checked={filters && filters.size === "S"}
+						/>
+						S
 					</label>
-					<label htmlFor="size">
-						<input type="radio" name="size" />M
+					<label htmlFor="M">
+						<input
+							type="radio"
+							name="size"
+							id="M"
+							onChange={() => setFilters((prev) => ({ ...prev, size: "M" }))}
+							checked={filters && filters.size === "M"}
+						/>
+						M
 					</label>
-					<label htmlFor="size">
-						<input type="radio" name="size" />L
+					<label htmlFor="L">
+						<input
+							type="radio"
+							name="size"
+							id="L"
+							onChange={() => setFilters((prev) => ({ ...prev, size: "L" }))}
+							checked={filters && filters.size === "L"}
+						/>
+						L
 					</label>
-					<label htmlFor="size">
-						<input type="radio" name="size" />
+					<label htmlFor="XL">
+						<input
+							type="radio"
+							name="size"
+							id="XL"
+							onChange={() => setFilters((prev) => ({ ...prev, size: "XL" }))}
+							checked={filters && filters.size === "XL"}
+						/>
 						XL
 					</label>
 				</div>
