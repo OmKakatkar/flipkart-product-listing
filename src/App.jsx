@@ -1,12 +1,12 @@
 import "./App.css";
-import { Card, Header } from "./components";
+import { Card, Filters, Header } from "./components";
 
 function App() {
 	return (
 		<div className="app">
 			{/* TODO: Add header, filter sidebar, products */}
 			<Header />
-			<Card />
+			<Filters />
 		</div>
 	);
 }

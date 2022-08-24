@@ -7,7 +7,8 @@
 	--clr-grey: #7e7e7e;
 	--clr-green: #47f347;
 	--clr-red: #f54646;
-	--height-header: 3rem;
+	--height-header: 50px;
+	--width-sidebar: 250px;
 }
 
 /* Utilities */

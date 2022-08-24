@@ -1,0 +1,17 @@
+.filters {
+	width: var(--width-sidebar);
+	position: fixed;
+	left: 0;
+	top: var(--height-header);
+	border-right: 1px solid var(--clr-grey);
+	height: calc(100vh - var(--height-header));
+}
+
+.filter-container {
+	margin-top: 0.5rem;
+}
+
+.filter-options {
+	display: flex;
+	flex-direction: column;
+}
