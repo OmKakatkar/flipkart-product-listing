@@ -1,4 +1,5 @@
 .product-list {
+	margin-top: calc(var(--height-header) + 1rem);
 	margin-left: var(--width-sidebar);
 	max-width: var(100vw - var(--width-sidebar));
 	display: flex;

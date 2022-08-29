@@ -1,16 +1,36 @@
 import { useState } from "react";
-import { Filters, Header, ProductList } from "./components";
+import { Cart, Header, ProductList } from "./components";
 import data from "./database.json";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-	const [filteredProducts, setFilteredProducts] = useState(data.products);
+	const [cart, setCart] = useState([]);
+	const [, setWishlist] = useState([]);
 
 	return (
 		<div className="app">
-			<Header />
-			<ProductList products={filteredProducts} />
-			<Filters setProducts={setFilteredProducts} products={data.products} />
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<ProductList
+								products={data.products}
+								setCart={setCart}
+								cart={cart}
+							/>
+						}
+					/>
+					<Route
+						path="/cart"
+						element={
+							<Cart cart={cart} setCart={setCart} setWishlist={setWishlist} />
+						}
+					/>
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 }

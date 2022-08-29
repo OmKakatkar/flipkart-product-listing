@@ -1,0 +1,25 @@
+.cart {
+	flex-direction: column;
+}
+
+.cart-summary {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	max-width: 30vw;
+	min-width: 30vw;
+}
+
+.cart-summary div {
+	position: relative;
+}
+
+.cart-summary > div > span {
+	position: absolute;
+	right: 10px;
+}
+
+.cart-items {
+	display: flex;
+	flex-wrap: wrap;
+}

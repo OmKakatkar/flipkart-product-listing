@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./card.css";
 
-export function Card({ product }) {
+export function Card({ product, children }) {
 	return (
 		<div className="card">
 			<div className="card-image">
@@ -26,6 +26,7 @@ export function Card({ product }) {
 				<span className="discount">{product.discount}% off</span>
 			</div>
 			{product.size && <div>Size : {product.size.join(", ")}</div>}
+			{children}
 		</div>
 	);
 }

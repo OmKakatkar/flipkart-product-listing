@@ -74,4 +74,11 @@
 
 .cart-icon {
 	margin-right: 0.3rem;
+	color: var(--clr-white);
+	text-decoration: none;
+}
+
+.cart-icon + span {
+	color: var(--clr-white);
+	text-decoration: none;
 }

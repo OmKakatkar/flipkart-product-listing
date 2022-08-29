@@ -4,6 +4,7 @@ import {
 	faCartShopping,
 	faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export function Header() {
@@ -45,13 +46,13 @@ export function Header() {
 						className="more-icon"
 					></FontAwesomeIcon>
 				</div>
-				<div>
+				<Link to="/cart">
 					<FontAwesomeIcon
 						icon={faCartShopping}
 						className="cart-icon"
 					></FontAwesomeIcon>
 					<span>Cart</span>
-				</div>
+				</Link>
 			</nav>
 		</header>
 	);
